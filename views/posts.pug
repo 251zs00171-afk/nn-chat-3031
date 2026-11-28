@@ -23,11 +23,9 @@ html(lang="ja")
               - const changeThemeText = (currentTheme === 'light' ? 'ダークモードに切り替える' : 'ライトモードに切り替える');
               a.dropdown-item(href="/changeTheme") #{changeThemeText}
               a.dropdown-item(href="/logout") ログアウトする
-    each post, indexin posts
+    each post, index in posts
       - const isLatest = (index === posts.length -1);
       - const cardClass = (user === post.postedBy ? 'card my-3 border-primary' : 'card my -3') + (isLatest ? ' latest-post' : '');
-      div(class=cardClass)
-      - const cardClass = (user === post.postedBy ? 'card my-3 border-primary' : 'card my-3')
       div(class=cardClass)
         div.card-body
           div.d-flex.justify-content-between
